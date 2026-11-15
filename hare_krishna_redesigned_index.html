@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#321708">
+<title>Hare Krishna Tiffin Service Centre</title>
+<meta name="description" content="Fresh, hygienic, homemade meals and tiffin plans from Hare Krishna Tiffin Service Centre.">
+<style>
+:root{
+ --brown:#321708;--brown2:#4b230d;--orange:#f15a0a;--orange2:#d94805;
+ --gold:#ffc928;--cream:#fffaf4;--ink:#21150f;--muted:#75685f;--line:#eee4da;
+ --green:#24823b;--white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.topline{background:#241006;color:#ffe3b5;text-align:center;padding:8px 12px;font-size:12px;font-weight:700;letter-spacing:.04em}
+header{position:sticky;top:0;z-index:20;background:var(--brown);color:#fff;box-shadow:0 5px 20px #1b0b0633}
+.nav{max-width:1240px;margin:auto;min-height:72px;padding:10px 22px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:235px}
+.logo{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:26px}
+.brand strong{display:block;font-size:18px;line-height:1.1}
+.brand small{display:block;color:var(--gold);font-weight:750;font-size:12px;margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:24px;margin:auto;font-weight:700;font-size:14px}
+.navlinks a{padding:11px 14px;border-radius:12px}
+.navlinks a.active,.navlinks a:hover{background:var(--orange);color:#fff}
+.navright{display:flex;align-items:center;gap:12px}
+.iconbtn,.cartbtn{border:0;color:#fff;background:transparent;font-weight:800;padding:10px;border-radius:12px}
+.cartbtn{background:var(--orange);padding:12px 17px}
+.cartbtn:hover,.primary:hover{background:var(--orange2)}
+.hero{min-height:410px;color:#fff;position:relative;overflow:hidden;background:#321708}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,14,4,.94) 0%,rgba(45,19,6,.86) 42%,rgba(45,19,6,.15) 100%),url("https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat}
+.hero-inner{position:relative;max-width:1240px;margin:auto;padding:58px 24px 52px;min-height:410px;display:flex;align-items:center}
+.hero-copy{max-width:590px}
+.eyebrow{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.hero .eyebrow{color:var(--gold)}
+h1{font-size:clamp(38px,5.2vw,64px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 16px}
+h1 span{color:var(--gold)}
+.hero p{font-size:17px;line-height:1.55;color:#fff4e8;max-width:540px;margin:0}
+.features{display:flex;gap:22px;flex-wrap:wrap;margin:22px 0 25px;font-size:13px;font-weight:750}
+.features span{display:flex;align-items:center;gap:8px}
+.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:14px 23px;font-weight:850}
+.primary{background:var(--orange);color:#fff}
+.secondary{background:#fff;color:var(--brown);border:1px solid #f3d8c4}
+.categories-wrap{background:#fffaf6;border-bottom:1px solid var(--line)}
+.categories{max-width:1240px;margin:auto;padding:18px 20px;display:flex;gap:12px;overflow:auto}
+.cat{min-width:100px;border:1px solid #eee2d8;background:#fff;border-radius:17px;padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:7px;flex-direction:column;font-size:13px;font-weight:800;color:var(--ink);white-space:nowrap}
+.cat .cat-icon{font-size:25px}
+.cat.active{background:var(--orange);border-color:var(--orange);color:#fff}
+section{max-width:1240px;margin:auto;padding:38px 20px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}
+.section-head h2{font-size:clamp(25px,3vw,34px);margin:5px 0 4px;letter-spacing:-.035em}
+.section-head p{margin:0;color:var(--muted);font-size:14px}
+.tools{display:flex;gap:10px;align-items:center}
+.search{width:min(260px,48vw);padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;outline:none}
+.search:focus{border-color:var(--orange);box-shadow:0 0 0 3px #f15a0a18}
+.sort{padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{border:1px solid #eee7e1;border-radius:19px;overflow:hidden;background:#fff;box-shadow:0 7px 24px #3217080c;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 13px 30px #32170818}
+.foodimg{height:190px;background:linear-gradient(135deg,#f9e7d2,#f3c18d);display:grid;place-items:center;font-size:66px;overflow:hidden}
+.foodimg img{width:100%;height:100%;object-fit:cover;display:block}
+.cardbody{padding:14px 15px 15px}
+.cardtop{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.card h3{margin:0;font-size:17px;line-height:1.25}
+.price{font-weight:950;color:var(--brown);white-space:nowrap}
+.desc{color:var(--muted);font-size:13px;line-height:1.45;min-height:36px;margin:8px 0 13px}
+.cardbottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.add{border:0;background:var(--orange);color:#fff;border-radius:10px;padding:10px 13px;font-weight:850}
+.add:hover{background:var(--orange2)}
+.empty{border:1px dashed #e9bd94;background:#fff9f2;border-radius:18px;padding:28px;text-align:center;color:#785d49;grid-column:1/-1}
+.plan-banner{margin:10px auto 38px;max-width:1240px;padding:28px 30px;border-radius:20px;color:#fff;background:linear-gradient(100deg,rgba(44,18,5,.96),rgba(89,39,12,.88)),url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1500&q=80") center/cover;display:grid;grid-template-columns:1.2fr 1fr auto;gap:20px;align-items:center}
+.plan-banner h2{font-size:30px;margin:4px 0;color:var(--gold)}
+.plan-banner p{margin:0;color:#fff1df;font-size:14px}
+.plan-points{display:grid;gap:8px;font-size:13px;font-weight:750}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{border:1px solid var(--line);border-radius:18px;padding:20px;background:linear-gradient(180deg,#fff,#fff9f3)}
+.plan h3{margin:8px 0}.plan p{color:var(--muted);font-size:14px;line-height:1.5}.plan .price{font-size:22px}
+.how{background:#fff8f1;border-top:1px solid #f3e5d8;border-bottom:1px solid #f3e5d8}
+.how-inner{max-width:1240px;margin:auto;padding:38px 20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px}
+.num{width:34px;height:34px;background:#fff0df;color:var(--orange2);border-radius:11px;display:grid;place-items:center;font-weight:950}
+.step p{color:var(--muted);font-size:13px;line-height:1.5}
+footer{background:var(--brown);color:#fff;padding:28px 20px}
+.foot{max-width:1240px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.foot small{color:#e8cdb8}
+.modalback{display:none;position:fixed;inset:0;background:#160a06b8;z-index:40;padding:16px;align-items:center;justify-content:center}
+.modal{background:#fff;border-radius:20px;padding:22px;width:min(560px,100%);max-height:92vh;overflow:auto}
+.modalhead{display:flex;justify-content:space-between;align-items:center}
+.close{border:0;background:#f5eee8;border-radius:50%;width:38px;height:38px;font-size:21px}
+.field{display:grid;gap:6px;margin:12px 0}
+.field label{font-size:13px;font-weight:800}
+.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid #d9d0c8;border-radius:11px;font:inherit}
+.cartline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.muted{color:var(--muted);font-size:13px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#241006;color:#fff;padding:12px 18px;border-radius:999px;z-index:60;display:none;max-width:90%;text-align:center}
+@media(max-width:900px){
+ .nav{gap:10px}.brand{min-width:auto}.navlinks{gap:5px}.navlinks a{padding:10px 8px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .plan-banner{grid-template-columns:1fr 1fr}.plan-banner .primary{grid-column:1/-1;width:max-content}
+}
+@media(max-width:650px){
+ .topline{font-size:11px}.nav{min-height:64px;padding:8px 13px}.logo{width:42px;height:42px}
+ .brand strong{font-size:15px}.brand small{font-size:10px}
+ .navlinks{display:none}.navright{margin-left:auto}.cartbtn{padding:11px 13px}
+ .hero,.hero-inner{min-height:390px}.hero-inner{padding:42px 20px}.hero:before{background:linear-gradient(90deg,rgba(35,14,4,.92),rgba(45,19,6,.68)),url("https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1100&q=85") center/cover}
+ .hero p{font-size:15px}.features{gap:12px;font-size:12px}
+ section{padding:30px 14px}.section-head{display:block}.tools{margin-top:14px}.search{width:100%}
+ .categories{padding:14px}.cat{min-width:83px;padding:9px 12px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .foodimg{height:125px}.cardbody{padding:11px}.card h3{font-size:14px}.desc{font-size:12px;min-height:48px}.cardbottom{align-items:flex-start;flex-direction:column}.add{width:100%;padding:9px}
+ .plan-banner{margin:4px 14px 28px;padding:22px 18px;grid-template-columns:1fr}.plan-banner h2{font-size:25px}
+ .plan-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
+}
+@media(max-width:370px){.grid{grid-template-columns:1fr}.foodimg{height:180px}}
+</style>
+</head>
+<body>
+<div class="topline">FRESH • HYGIENIC • HOMEMADE — MADE WITH CARE EVERY DAY</div>
+<header>
+ <div class="nav">
+  <a class="brand" href="#">
+   <span class="logo">♨</span>
+   <span><strong>Hare Krishna</strong><small>Tiffin Service Centre</small></span>
+  </a>
+  <nav class="navlinks">
+   <a class="active" href="#">Home</a><a href="#menu">Menu</a><a href="#plans">Plans</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="navright">
+   <button class="iconbtn" aria-label="Search" onclick="document.getElementById('menuSearch').focus()">⌕</button>
+   <button class="cartbtn" onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
+  </div>
+ </div>
+</header>
+
+<div class="hero">
+ <div class="hero-inner">
+  <div class="hero-copy">
+   <div class="eyebrow">Ghar jaisa swaad, har din</div>
+   <h1>Delicious &amp;<br>Home-Style Meals<br>at <span>Your Doorstep</span></h1>
+   <p>Fresh, hygienic and homemade meals prepared with care. Choose your favourites and enjoy simple ordering.</p>
+   <div class="features"><span>🛵 Timely Delivery</span><span>🌿 Fresh Ingredients</span><span>🍱 Tiffin &amp; Monthly Plans</span></div>
+   <a class="primary" href="#menu">Order Now&nbsp; →</a>
+  </div>
+ </div>
+</div>
+
+<div class="categories-wrap">
+ <div class="categories" id="categories">
+  <button class="cat active" data-cat="All"><span class="cat-icon">🍽️</span>All</button>
+  <button class="cat" data-cat="Regular Menu"><span class="cat-icon">🍛</span>Regular Menu</button>
+  <button class="cat" data-cat="Upwas Tiffin"><span class="cat-icon">🥗</span>Upwas Tiffin</button>
+ </div>
+</div>
+
+<section id="menu">
+ <div class="section-head">
+  <div><div class="eyebrow">Freshly prepared for you</div><h2>Our Food Menu</h2><p>Freshly prepared, hygienic and homely food.</p></div>
+  <div class="tools"><input id="menuSearch" class="search" type="search" placeholder="Search food items..." aria-label="Search food items"></div>
+ </div>
+ <div class="grid" id="menuGrid"><div class="empty">Loading today's menu…</div></div>
+</section>
+
+<div class="plan-banner">
+ <div><div class="eyebrow" style="color:#ffd54a">Easy everyday meals</div><h2>Monthly Tiffin Plans</h2><p>Healthy • Affordable • Hassle-Free</p></div>
+ <div class="plan-points"><span>✓ Daily Fresh Meals</span><span>✓ Customizable Menu</span><span>✓ Home / Office Delivery</span></div>
+ <a class="primary" href="#plans" style="background:var(--gold);color:#321708">View Plans&nbsp; →</a>
+</div>
+
+<section id="plans" style="padding-top:8px">
+ <div class="section-head"><div><div class="eyebrow">Regular meals, made easy</div><h2>Tiffin Subscription Plans</h2><p>Choose a plan that fits your routine.</p></div></div>
+ <div class="plan-grid" id="planGrid"><div class="empty">Tiffin plans will appear here soon.</div></div>
+</section>
+
+<div class="how" id="about">
+ <div class="how-inner">
+  <div class="eyebrow">Simple ordering</div><h2 style="margin:7px 0 20px;font-size:30px">How it works</h2>
+  <div class="steps">
+   <div class="step"><div class="num">1</div><h3>Choose your food</h3><p>Browse the menu and add your favourites to cart.</p></div>
+   <div class="step"><div class="num">2</div><h3>Share your details</h3><p>Enter your name, phone number and delivery address.</p></div>
+   <div class="step"><div class="num">3</div><h3>We prepare your order</h3><p>Our team will confirm your order and prepare your meal.</p></div>
+  </div>
+ </div>
+</div>
+<footer id="contact">
+ <div class="foot"><div><b>Hare Krishna Tiffin Service Centre</b><br><small>Fresh, hygienic, homestyle food made with care.</small></div><small>For orders and enquiries, contact the service team.</small><small>© <span id="year"></span> Hare Krishna Tiffin Service Centre</small></div>
+</footer>
+
+<div class="modalback" id="cartModal">
+ <div class="modal">
+  <div class="modalhead"><h2 style="margin:0">Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
+  <div id="cartItems"></div>
+  <div style="display:flex;justify-content:space-between;padding:15px 0;font-size:18px;font-weight:900"><span>Total</span><span id="cartTotal">₹0</span></div>
+  <hr style="border:0;border-top:1px solid #eee"><h3>Delivery details</h3>
+  <form id="checkoutForm">
+   <div class="field"><label>Your name</label><input name="customerName" required maxlength="80"></div>
+   <div class="field"><label>Phone number</label><input name="phone" required inputmode="tel" pattern="[0-9+ -]{10,15}"></div>
+   <div class="field"><label>Delivery address</label><textarea name="address" required rows="2"></textarea></div>
+   <div class="field"><label>Order type</label><select name="fulfilment"><option value="Delivery">Home delivery</option><option value="Pickup">Self pickup</option></select></div>
+   <div class="field"><label>Notes (optional)</label><textarea name="notes" rows="2"></textarea></div>
+   <button class="primary" style="width:100%" type="submit">Place Order</button>
+   <p class="muted">Payment and delivery details will be confirmed by the service team.</p>
+  </form>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getFirestore, collection, getDocs, addDoc, serverTimestamp, query, where } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+const firebaseConfig={apiKey:"AIzaSyCPJnZ32gOIhJPZsZ4Pv_HgpeFEp7fthPw",authDomain:"hare-krishna-tiffin-service.firebaseapp.com",projectId:"hare-krishna-tiffin-service",storageBucket:"hare-krishna-tiffin-service.firebasestorage.app",messagingSenderId:"290567449668",appId:"1:290567449668:web:8fa450adcb213d69482011",measurementId:"G-TJFEQ8Q3Q7"};
+const app=initializeApp(firebaseConfig),db=getFirestore(app);
+let products=[],plans=[],cart=[],category="All",searchText="";
+const money=n=>"₹"+Number(n||0).toLocaleString("en-IN");
+function toast(s){const t=document.getElementById("toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",2800)}
+function esc(s=""){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function load(){
+ try{
+  const [p,pl]=await Promise.all([getDocs(query(collection(db,"products"),where("active","==",true))),getDocs(query(collection(db,"plans"),where("active","==",true)))]);
+  products=p.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.price!==null&&x.price!==undefined&&Number.isFinite(Number(x.price)));
+  plans=pl.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.price!==null&&x.price!==undefined&&Number.isFinite(Number(x.price)));
+  renderMenu();renderPlans();
+ }catch(e){console.error(e);toast("Menu load nahi hua. Admin se check karwayein.")}
+}
+function renderMenu(){
+ const list=products.filter(p=>(category==="All"||p.category===category)&&(!searchText||String(p.name||"").toLowerCase().includes(searchText)));
+ const g=document.getElementById("menuGrid");
+ if(!list.length){g.innerHTML='<div class="empty">Is category mein abhi items available nahi hain. Admin panel mein item ka price aur “Visible to customers” check karein.</div>';return}
+ g.innerHTML=list.map(p=>`<article class="card"><div class="foodimg">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='🍲'">`:"🍲"}</div><div class="cardbody"><div class="cardtop"><h3>${esc(p.name)}</h3><span class="price">${money(p.price)}</span></div><div class="desc">${esc(p.description||"Freshly prepared with care.")}</div><div class="cardbottom"><span class="muted">Fresh • Homemade</span><button class="add" onclick="addToCart('${p.id}')">🛒 Add to Cart</button></div></div></article>`).join("");
+}
+function renderPlans(){
+ const g=document.getElementById("planGrid");
+ if(!plans.length){g.innerHTML='<div class="empty">Abhi koi subscription plan publish nahi hua hai.</div>';return}
+ g.innerHTML=plans.map(p=>`<article class="plan"><div class="eyebrow">Tiffin plan</div><h3>${esc(p.name)}</h3><div class="price">${money(p.price)} <span class="muted" style="font-weight:600">/ ${esc(p.duration||"plan")}</span></div><p>${esc(p.description||"Regular homestyle meals.")}</p><button class="add" onclick="planEnquiry('${p.id}')">Enquire about plan</button></article>`).join("");
+}
+window.addToCart=id=>{const p=products.find(x=>x.id===id);if(!p)return;const old=cart.find(x=>x.id===id);if(old)old.qty++;else cart.push({id:p.id,name:p.name,price:Number(p.price||0),qty:1});updateCart();toast("Added to cart")};
+window.openCart=()=>{document.getElementById("cartModal").style.display="flex";drawCart()};
+window.closeCart=()=>document.getElementById("cartModal").style.display="none";
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((a,x)=>a+x.qty,0)}
+function drawCart(){const box=document.getElementById("cartItems");box.innerHTML=cart.length?cart.map(x=>`<div class="cartline"><div><b>${esc(x.name)}</b><div class="muted">${money(x.price)} × ${x.qty}</div></div><div><button onclick="changeQty('${x.id}',-1)">−</button> ${x.qty} <button onclick="changeQty('${x.id}',1)">+</button></div></div>`).join(""):'<p class="muted">Your cart is empty.</p>';document.getElementById("cartTotal").textContent=money(cart.reduce((a,x)=>a+x.price*x.qty,0))}
+window.changeQty=(id,d)=>{const x=cart.find(x=>x.id===id);if(x){x.qty+=d;if(x.qty<=0)cart=cart.filter(y=>y.id!==id)}updateCart();drawCart()};
+window.planEnquiry=id=>{const p=plans.find(x=>x.id===id);if(!p)return;toast("Please contact the service team to confirm this plan.")};
+document.getElementById("checkoutForm").addEventListener("submit",async e=>{e.preventDefault();if(!cart.length){toast("Cart is empty");return}const f=new FormData(e.target);const total=cart.reduce((a,x)=>a+x.price*x.qty,0);const payload={customerName:String(f.get("customerName")).trim(),phone:String(f.get("phone")).trim(),address:String(f.get("address")).trim(),fulfilment:String(f.get("fulfilment")),notes:String(f.get("notes")||""),items:cart.map(x=>({productId:x.id,name:x.name,price:x.price,quantity:x.qty})),total,status:"New",createdAt:serverTimestamp()};
+ try{await addDoc(collection(db,"orders"),payload);cart=[];updateCart();e.target.reset();closeCart();toast("Order placed successfully! Team will contact you.")}catch(err){console.error(err);toast("Order place nahi hua. Please try again.")}});
+document.querySelectorAll(".cat").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));b.classList.add("active");category=b.dataset.cat;renderMenu()}));
+document.getElementById("menuSearch").addEventListener("input",e=>{searchText=e.target.value.trim().toLowerCase();renderMenu()});
+document.getElementById("year").textContent=new Date().getFullYear();
+load();
+</script>
+</body>
+</html>
